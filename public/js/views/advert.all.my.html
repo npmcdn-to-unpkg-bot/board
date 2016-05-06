@@ -1,0 +1,42 @@
+<div class="container">
+    <h1 class="form-title">Мои объявления</h1>
+    <div class="ng-wrapper">
+        <div class="headers">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-xs-1">ID</div>
+                <div class="col-lg-3 col-md-3 col-xs-3">Заголовок</div>
+                <div class="col-lg-5 col-md-4 col-xs-3">Описание</div>
+                <div class="col-lg-1 col-md-1 col-xs-1">Стоимость</div>
+                <div class="col-lg-2 col-md-2 col-xs-2">Действия</div>
+            </div>
+        </div>
+        <div class="adverts">
+            <div ng-repeat="item in adverts" class="item">
+                <a href="#/adverts/my/show?do=get&id={{ item.id }}&offers=true">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-xs-1">{{ item.id }}</div>
+                        <div class="col-lg-3 col-md-3 col-xs-3">{{ item.title }}</div>
+                        <div class="col-lg-5 col-md-4 col-xs-3">{{ item.description }}</div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">{{ item.price }}</div>
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Действия<span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#/adverts/my/edit?do=edit&id={{ item.id }}"><i class="fa fa-btn fa-sign-out"></i>Редактировать</a>
+                                    </li>
+                                    <li>
+                                        <a href="#/adverts/my/?do=remove&id={{ item.id }}"><i class="fa fa-btn fa-sign-out"></i>Удалить</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

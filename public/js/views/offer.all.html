@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="form-title">Мои предложения</h1>
+    <div class="ng-wrapper">
+        <div class="headers">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-4">Заголовок</div>
+                <div class="col-lg-5 col-md-4 col-xs-4">Описание</div>
+                <div class="col-lg-2 col-md-4 col-xs-4">Стоимость</div>
+                <div class="col-lg-2 col-md-4 col-xs-4">Действия</div>
+            </div>
+        </div>
+        <div class="offers">
+            <div ng-repeat="it in offers" class="item">
+                <a href="#/offers/my/show?do=get&id={{ it.id }}">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-4">{{ it.title }}</div>
+                        <div class="col-lg-5 col-md-4 col-xs-4">{{ it.description }}</div>
+                        <div class="col-lg-2 col-md-4 col-xs-4">{{ it.price }}</div>
+                        <div class="col-lg-2 col-md-4 col-xs-4">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Действия<span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#/offers/my/edit/?do=get&id={{ it.id }}"><i class="fa fa-btn fa-sign-out"></i>Редактировать</a>
+                                    </li>
+                                    <li>
+                                        <a href="#/offers/my/?do=remove&id={{ it.id }}"><i class="fa fa-btn fa-sign-out"></i>Удалить</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

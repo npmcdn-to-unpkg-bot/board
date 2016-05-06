@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="form-title">Объявления</h1>
+    <div class="ng-wrapper">
+        <div class="headers">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-xs-1">ID</div>
+                <div class="col-lg-3 col-md-4 col-xs-4">Заголовок</div>
+                <div class="col-lg-6 col-md-4 col-xs-4">Описание</div>
+                <div class="col-lg-2 col-md-3 col-xs-4">Стоимость</div>
+            </div>
+        </div>
+        <div class="adverts">
+            <div ng-repeat="item in adverts" class="item">
+                <a href="#/adverts/show?do=get&id={{ item.id }}">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-xs-1">{{ item.id }}</div>
+                        <div class="col-lg-3 col-md-4 col-xs-4">{{ item.title }}</div>
+                        <div class="col-lg-6 col-md-4 col-xs-4">{{ item.description }}</div>
+                        <div class="col-lg-2 col-md-3 col-xs-4">{{ item.price }}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
